@@ -1,2 +1,8 @@
-<h1>{{ title }}</h1>
+<div>
+  <h1 [hidden]="!isVisible">{{ title }}</h1>
+  <button (click)="changeVisibility()">
+    {{ isVisible ? "Hide" : "Show" }} title
+  </button>
+</div>
+<hr />
 <app-customers-list></app-customers-list>

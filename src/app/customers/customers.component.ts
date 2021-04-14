@@ -7,8 +7,13 @@ import { ICustomer } from '../shared/interfaces';
   styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
+  isVisible: boolean = true;
   title: string;
   people: ICustomer[];
+
+  changeVisibility() {
+    this.isVisible = !this.isVisible;
+  }
 
   constructor() {}
 
