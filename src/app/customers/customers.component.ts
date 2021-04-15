@@ -27,6 +27,13 @@ export class CustomersComponent implements OnInit {
         orderTotal: 9.99,
         customerSince: new Date(2018, 8, 1),
       },
+      {
+        id: 2,
+        name: 'Daniel',
+        city: 'New York',
+        orderTotal: 9.99,
+        customerSince: new Date(2018, 8, 1),
+      },
     ];
   }
 }

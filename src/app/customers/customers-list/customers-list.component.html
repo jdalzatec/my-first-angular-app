@@ -1,4 +1,4 @@
-<filter-textbox></filter-textbox>
+<filter-textbox (changed)="filter($event)"></filter-textbox>
 
 <br />
 <br />
@@ -22,7 +22,7 @@
 
     <tr *ngIf="filteredCustomers && filteredCustomers.length">
       <td colspan="2">&nbsp;</td>
-      <td>{{ customersOrderTotal | currency: currencyCode : "symbol" }}</td>
+      <td>{{ customersOrderTotal | currency: currencyCode:"symbol" }}</td>
     </tr>
 
     <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
