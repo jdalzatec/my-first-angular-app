@@ -14,7 +14,7 @@ export class DataService {
 
   getCustomers(): Observable<ICustomer[]> {
     return this.http
-      .get<ICustomer[]>(this.baseUrl + 'customer.json')
+      .get<ICustomer[]>(this.baseUrl + 'customers.json')
       .pipe(catchError(this.handleError));
   }
 

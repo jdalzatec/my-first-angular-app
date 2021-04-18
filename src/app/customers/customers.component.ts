@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICustomer } from '../shared/interfaces';
+import { DataService } from '../core/data.service';
 
 @Component({
   selector: 'app-customers',
@@ -11,29 +12,18 @@ export class CustomersComponent implements OnInit {
   title: string;
   people: ICustomer[];
 
+  constructor(private dataService: DataService) {}
+
   changeVisibility() {
     this.isVisible = !this.isVisible;
   }
 
-  constructor() {}
-
   ngOnInit(): void {
     this.title = 'Customers';
-    this.people = [
-      {
-        id: 1,
-        name: 'Juan David',
-        city: 'Phoenix',
-        orderTotal: 9.99,
-        customerSince: new Date(2018, 8, 1),
-      },
-      {
-        id: 2,
-        name: 'Daniel',
-        city: 'New York',
-        orderTotal: 9.99,
-        customerSince: new Date(2018, 8, 1),
-      },
-    ];
+    this.dataService
+      .getCustomers()
+      .subscribe((customers: ICustomer[]) => (this.people = customers));
+
+    console.log(this.people);
   }
 }
