@@ -23,7 +23,5 @@ export class CustomersComponent implements OnInit {
     this.dataService
       .getCustomers()
       .subscribe((customers: ICustomer[]) => (this.people = customers));
-
-    console.log(this.people);
   }
 }
